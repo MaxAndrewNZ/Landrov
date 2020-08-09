@@ -21,7 +21,7 @@ done = False
 cnt = 0
 leftMotor = 0.0 
 rightMotor = 0.0
-speed = 0.3
+speed = 0.5
 turningSpeed = 0.6
 
 while not done:

@@ -32,7 +32,7 @@ Connect the 12V lead acid battery pack to the Landrov. The rover will beep 3 tim
 
 ### Connecting to the network
 
-To control the Landrov, you must connect to is over wifi. 
+To control the Landrov, you must connect to it over wifi. 
 - The network will appear as `landrov1` 
 - The password to the network is `11qwedsa`
 
@@ -102,6 +102,6 @@ To change the code running on the rover, use SSH as follows:
 1. [Connect to the network](#Connecting-to-the-network)
 2. SSH into the rover with:
     - SSH: `ssh upsquared@192.168.8.106`
-    - password: `1qwedsa1`
+    - password: `1qwedsa`
 3. Edit necessary files.
 4. Run `runtmux.sh` to rerun all processes and apply changes.
