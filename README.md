@@ -4,6 +4,8 @@
 
 ## Running Examples
 
+Examples are found in the `./examples` directory.
+
 To run the examples, firstly [power on the rover](#Powering-Landrov) and [connect to the rovers network](#Connecting-to-the-network). These examples are a good starting point for working with the rover.
 
 ### Keyboard Control Example
