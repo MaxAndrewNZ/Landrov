@@ -16,7 +16,7 @@ The rover can be controlled with a keyboard by running `keyboard_control.py`. Th
 
 ### Sensor Example
 
-Running `client_example.py`, the rover will navigate in a set circuit for a few seconds and display `RGB` and `Depth` sensor data.
+Running `client_example.py`, the rover will navigate in a set circuit for a few seconds and display `RGB` and `Depth` sensor data. The sensor data can also be seen by running `view_sensors.py`.
 
 ### Webapp Control Example
 
