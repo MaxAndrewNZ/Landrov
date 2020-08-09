@@ -1,0 +1,58 @@
+for installation:
+
+python:
+install miniconda
+https://conda.io/miniconda.html
+
+
+compiling opencv for up board with gstreamer+ffmpeg to miniconda:
+--------------------
+prreq:
+sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good gstreamer1.0-plugins-bad libgfortran3 libdc1394-22-dev ffmpeg libavcodec-dev libavformat-dev libavutil-dev libgphoto2-dev libavresample-dev libv4l-dev libswscale-dev 
+
+
+clone opencv
+wget https://github.com/Itseez/opencv/archive/3.3.1.zip
+unzip 3.3.1.zip
+cd opencv-3.3.1/
+mkdir build
+cd build/
+cmake -DWITH_CUDA=OFF -DBUILD_TIFF=ON -DBUILD_opencv_java=OFF -DWITH_OPENGL=ON -DWITH_OPENCL=ON -DWITH_IPP=ON -DWITH_TBB=ON -DWITH_EIGEN=ON -DWITH_V4L=ON -DWITH_VTK=OFF -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DCMAKE_BUILD_TYPE=RELEASE -DBUILD_opencv_python2=OFF -DCMAKE_INSTALL_PREFIX=$(python3 -c "import sys; print(sys.prefix)") -DPYTHON3_EXECUTABLE=$(which python3) -DPYTHON3_INCLUDE_DIR=$(python3 -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") -DPYTHON3_PACKAGES_PATH=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D PYTHON_EXECUTABLE=~/miniconda3/bin/python -D WITH_GSTREAMER=ON -D BUILD_EXAMPLES=ON  -DENABLE_AVX=OFF .. && make -j 2
+
+cp ./lib/python3/cv2.cpython-36m-x86_64-linux-gnu.so ../../tests/realsense/
+
+
+#conda install -c conda-forge opencv 
+
+realseanse:
+https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md
+
+
+python bidings:
+https://github.com/IntelRealSense/librealsense/tree/master/wrappers/python
+
+
+issues:
+missing opengl
+https://github.com/openMVG/openMVG/issues/143
+
+illegal instruction
+checkout different version
+https://github.com/IntelRealSense/librealsense/issues/1428
+
+missing libs
+sudo apt install libglfw3-dev
+sudo apt install libusb-1.0-0-dev
+
+
+plugins fo gst:
+
+not nedded!!!
+#conda install -c retrev gst-plugins-ugly
+#conda install -c retrev gst-plugins-good
+#conda install -c retrev gst-plugins-bad
+#conda install -c anaconda gst-plugins-base 
+
+
+
+ 
